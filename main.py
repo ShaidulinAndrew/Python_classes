@@ -22,17 +22,18 @@
 # Пациенту требуется заняться собой, если ему более 30 и вес меньше 50 или больше 120 кг
 # Пациенту требуется врачебный осмотр, если ему более 40 и вес менее 50 или больше 120 кг.
 
-# first_name = input('Введите Ваше имя: ')
-# last_name = input('Введите Вашу фамилию: ')
-# age = int(input('Введите Ваш возраст: '))
-# weight = int(input('Введите Ваш вес: '))
-#
-# if age < 30 and 50 < weight < 120:
-#     print(f'Привет {first_name, last_name}, при Вашем возрасте {age} лет и весе {weight} кг, Вы в отличной форме!')
-# elif age > 30 and (weight < 50 or weight > 120):  # скобки используются для группировки, так правильнее
-#     print(f'Привет {first_name, last_name}, при Вашем возрасте {age} лет и весе {weight} кг, Вам нужно заняться собой!')
-# elif age > 30 and (weight < 50 or weight > 120):
-#     print(f'Привет {first_name, last_name}, при Вашем возрасте {age} лет и весе {weight} кг, Вам обратиться к врачу!')
-# else:
-#     print('Какой то иной ответ')
+first_name = input('Введите Ваше имя: ')
+last_name = input('Введите Вашу фамилию: ')
+age = int(input('Введите Ваш возраст: '))
+weight = int(input('Введите Ваш вес: '))
 
+if age < 30 and 50 < weight < 120:
+    print(f'Привет {first_name, last_name}, при Вашем возрасте {age} лет и весе {weight} кг, Вы в отличной форме!')
+elif age > 30 and (weight < 50 or weight > 120):  # скобки используются для группировки, так правильнее
+    print(f'Привет {first_name, last_name}, при Вашем возрасте {age} лет и весе {weight} кг, Вам нужно заняться собой!')
+elif age > 30 and (weight < 50 or weight > 120):
+    print(f'Привет {first_name, last_name}, при Вашем возрасте {age} лет и весе {weight} кг, Вам обратиться к врачу!')
+else:
+    print('Какой то иной ответ')
+
+# Тест
