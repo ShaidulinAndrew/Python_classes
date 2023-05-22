@@ -37,3 +37,19 @@ else:
     print('Какой то иной ответ')
 
 # Тест
+
+print('Соревнования по Python')
+count = int(input('Введите количество участников: '))
+i = count  # счетчик учистников
+members = []
+
+while i > 0:
+    name = input('Кто занял {} место'.format(i))
+    members.append(name)  # добавляем участников в список members
+    i-=1  # уменьшаем счетчик участников
+print('В соревнованиях участвовали: ', members)
+
+members.reverse()  # т.к. участников записывали с конца, нужно перевернуть список через reverse
+result = members[:3]
+result = 'Победители: {}. Поздравляем!'.format(result)
+print(result)

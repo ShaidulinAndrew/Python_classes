@@ -41,7 +41,11 @@ print(friends.lower())  # приведение всех символов к ни
 
 # оператор in  # проверка наличия подстроки в строке
 hero = 'Superman'
+
 if 'man' in hero:
     print('Есть')
 
+# поиск через функцию find
+if hero.find('man') != -1:
+    print('Есть')
 
