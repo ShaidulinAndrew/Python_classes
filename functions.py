@@ -55,3 +55,41 @@ sep = get_sep('-', 50)
 text = 'Hello {} Func {}'.format(sep, sep)
 
 print(text)
+
+# Значение аргументов по умолчанию
+def greeting(who, say='Hello'):
+    print(say,who)
+greeting('Leo')
+greeting('Leo', 'Hi')
+
+# args* kwargs**
+def greeting(say, *args): # *who = *args
+    print(say, args)
+greeting('Hello', 'Leo', 'Max', 'Kate') # Будет кортеж из параметров
+
+def get_person(**kwargs):
+    for k,v in kwargs.items():
+        print(k, v)
+get_person(name='Leo', age=20, has_car=True)
+
+# Локальные и глобальные переменные
+def some_f():
+    a = 999  # локальная переменная
+    print('Переменная внутри функции: ', a)
+
+a = 1  # глобальная переменная
+some_f()
+print('Переменная после выполнения функции: ', a)
+
+# Можно изменить глобальную переменную внутри функции, но есть риск что во всем коде переменная будет заменена
+global_var = 1
+
+def my_f():
+    global global_var
+    local_var = 100
+    print(local_var)
+    print(global_var)
+    global_var = 999
+
+my_f()
+print(global_var)
