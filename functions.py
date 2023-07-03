@@ -93,3 +93,86 @@ def my_f():
 
 my_f()
 print(global_var)
+
+# функция как объект
+def some_f():
+    return 10
+result = some_f()
+print(result)
+
+a = some_f # Сохраняем функцию в переменную
+print(a())
+
+#
+def my_filter(numbers):
+    result = []
+    for number in numbers:
+        if number % 2 == 0:
+            result.append(number)
+    return result
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(my_filter(numbers))
+
+# Передача параметра в виде функции
+# Если нужны нечетные числа
+def my_filter(numbers, function):
+    result = []
+    for number in numbers:
+        if function(number):
+            result.append(number)
+    return result
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+def is_even(number):
+    return number % 2 == 0
+
+print(my_filter(numbers, is_even))
+
+def is_not_even(number):
+    return number % 2 != 0
+
+print(my_filter(numbers, is_not_even))
+
+# Если нужны числа больше 4
+def bigger_4(number):
+    return number > 4
+
+print(my_filter(numbers, bigger_4))
+
+# lambda-функции используются в одном месте
+
+print(my_filter(numbers, lambda number: number < 5))
+
+# функция sorted
+# параметры функции sorted (iterable - последовательность, key - ключ для сортировки, reverse - порядок)
+
+numbers = [1, 8, 6, 4, 2, 7, 3]
+print(sorted(numbers))
+print(sorted(numbers, reverse=True))
+
+# города и численность населения
+cities = [('Москва', 1000), ('Лас-Вегас', 2000), ('Антверпен', 500)]
+print(sorted(cities)) # сортировка происходит по городу
+
+def by_count(city):
+    return city[1] # указание на элемент кортежа по которому необходимо провести сортировку
+
+print(sorted(cities, key=by_count))
+print(sorted(cities, key=by_count, reverse=True))
+print(sorted(cities, key=lambda city: city[1], reverse=True))
+
+# функция filter позволяет фильтровать последовательности
+# параметры функции filter (function - функция фильтрации, iterable - последовательность)
+
+names = ['Max', 'Leo', 'Kate', 'Andrew']  # необходимо получить строки больше трех символов
+
+print(list(filter(lambda x: len(x)>3, names)))
+
+# функция map - применение функции к каждому элементу последовательности
+# параметры функции map(func - функция, iterable - последовательность)
+
+numbers = [1, 8, 6, 4, 2, 7, 3]
+print(list(map(lambda z: z**2, numbers)))
+print(list(map(lambda z: str(z), numbers)))
