@@ -157,3 +157,53 @@ def info_person(name, year, city):
     result = f'{name}, {year}, год(а) проживает в городе {city}'
     return result
 print(info_person('Ivan', 21, 'New York'))
+print(info_person('Sergey', 25, 'Moscow'))
+
+# написать функцию принимающую на вход три числа, на выходе большее из них
+
+def max_of_three(a, b, c):
+    if a > b and a > c:
+        return a
+    elif b > a and b > c:
+        return b
+    else:
+        return c
+
+print(max_of_three(35, 18, 23))
+
+def get_max(a, b, c):
+    result = max(a, b, c)
+    return result
+result = get_max(35, 18, 23)
+print(result)
+print(get_max(35, 18, 23))
+
+# игра атака
+
+player_name = input('Введите имя игрока: ')
+player = {
+    'name': player_name,
+    'health': 100,
+    'damage': 50,
+    'armor': 1.2
+}
+
+enemy_name = input('Введите имя врага: ')
+enemy = {
+    'name': enemy_name,
+    'health': 50,
+    'damage': 30,
+    'armor': 1
+}
+
+def get_damage(damage, armor):
+    return damage / armor
+def attack(unit, target):
+    damage = get_damage(unit['damage'], target['armor'])
+    target['health'] -= damage
+
+attack(player, enemy)
+print(enemy)
+
+attack(enemy, player)
+print(player)
